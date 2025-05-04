@@ -1,0 +1,19 @@
+groups:
+- name: inventory_service_alerts
+  rules:
+  - alert: HighErrorRate
+    expr: rate(product_errors_total[5m]) > 0.1
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: "High error rate detected"
+      description: "Error rate for inventory service is above 0.1 errors per second for 5 minutes."
+  - alert: LowInventoryValue
+    expr: product_inventory_value < 1000
+    for: 10m
+    labels:
+      severity: critical
+    annotations:
+      summary: "Low inventory value"
+      description: "Total inventory value is below 1000 for 10 minutes."

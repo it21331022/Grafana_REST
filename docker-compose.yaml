@@ -1,0 +1,57 @@
+version: '3.8'
+services:
+  inventory_service:
+    image: myinventoryacr.azurecr.io/inventory_service:latest
+    ports:
+      - "8080:8080"
+    environment:
+      - FLASK_ENV=production
+    networks:
+      - monitoring
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9091:9090"
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    configs:
+      - source: prometheus_config
+        target: /etc/prometheus/prometheus.yml
+      - source: prometheus_rules
+        target: /etc/prometheus/rules.yml
+    networks:
+      - monitoring
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3001:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_ADMIN_PASSWORD:-admin}
+      - GF_INSTALL_PLUGINS=
+    configs:
+      - source: grafana_datasource
+        target: /etc/grafana/provisioning/datasources/datasource.yml
+      - source: grafana_dashboard_provider
+        target: /etc/grafana/provisioning/dashboards/dashboard.yml
+      - source: grafana_dashboard
+        target: /etc/grafana/provisioning/dashboards/inventory_dashboard.json
+    networks:
+      - monitoring
+
+networks:
+  monitoring:
+    driver: bridge
+
+configs:
+  prometheus_config:
+    file: ./prometheus.yml
+  prometheus_rules:
+    file: ./rules.yml
+  grafana_datasource:
+    file: ./grafana/provisioning/datasources/datasource.yml
+  grafana_dashboard_provider:
+    file: ./grafana/provisioning/dashboards/dashboard.yml
+  grafana_dashboard:
+    file: ./inventory_dashboard.json
