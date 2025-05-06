@@ -1,0 +1,51 @@
+apiVersion: '2019-12-01'
+name: inventory-monitoring-group
+location: eastus
+properties:
+  containers:
+  - name: inventory-service
+    properties:
+      image: inventoryacrabd.azurecr.io/inventory-service:latest
+      resources:
+        requests:
+          cpu: 0.5
+          memoryInGB: 1.0
+      ports:
+      - port: 8080
+      environmentVariables: []
+  - name: prometheus
+    properties:
+      image: inventoryacrabd.azurecr.io/prometheus:latest
+      resources:
+        requests:
+          cpu: 0.5
+          memoryInGB: 1.0
+      ports:
+      - port: 9090
+      environmentVariables: []
+  - name: grafana
+    properties:
+      image: inventoryacrabd.azurecr.io/grafana:latest
+      resources:
+        requests:
+          cpu: 0.5
+          memoryInGB: 1.0
+      ports:
+      - port: 3000
+      environmentVariables: []
+  osType: Linux
+  ipAddress:
+    type: Public
+    ports:
+    - protocol: TCP
+      port: 8080
+    - protocol: TCP
+      port: 9090
+    - protocol: TCP
+      port: 3000
+    dnsNameLabel: inventory-monitoring-123
+  imageRegistryCredentials:
+  - server: inventoryacrabd.azurecr.io
+    username: inventoryacrabd
+    password: <your-password>
+type: Microsoft.ContainerInstance/containerGroups

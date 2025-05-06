@@ -1,0 +1,11 @@
+groups:
+- name: inventory_alerts
+  rules:
+  - alert: LowStockProducts
+    expr: product_low_stock > 0
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: "Low stock detected"
+      description: "{{ $value }} products have quantity less than 10."

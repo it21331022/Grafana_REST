@@ -1,0 +1,8 @@
+global:
+  scrape_interval: 15s
+scrape_configs:
+  - job_name: 'inventory-service'
+    static_configs:
+      - targets: ['inventory-monitoring-123.eastus.azurecontainer.io:8080']
+rule_files:
+  - "/etc/prometheus/alert.rules.yaml"

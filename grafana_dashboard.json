@@ -1,0 +1,370 @@
+{
+  "annotations": {
+    "list": []
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "links": [],
+  "panels": [
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "fill": 1,
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "id": 1,
+      "legend": { "avg": false, "current": true, "max": false, "min": false, "show": true, "total": false, "values": true },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": { "alertThreshold": true },
+      "percentage": false,
+      "pluginVersion": "9.5.3",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "product_count",
+          "legendFormat": "Total Products",
+          "refId": "A"
+        },
+        {
+          "expr": "product_low_stock",
+          "legendFormat": "Low Stock Products",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "title": "Inventory Status",
+      "tooltip": { "shared": true, "sort": 0, "value_type": "individual" },
+      "type": "graph",
+      "xaxis": { "buckets": null, "mode": "time", "name": null, "show": true, "values": [] },
+      "yaxes": [
+        { "format": "short", "label": "Count", "logBase": 1, "max": null, "min": 0, "show": true },
+        { "format": "short", "label": null, "logBase": 1, "max": null, "min": null, "show": true }
+      ],
+      "yaxis": { "align": false, "alignLevel": null }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "fill": 1,
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "id": 2,
+      "legend": { "avg": false, "current": true, "max": false, "min": false, "show": true, "total": false, "values": true },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": { "alertThreshold": true },
+      "percentage": false,
+      "pluginVersion": "9.5.3",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "rate(product_requests_total[5m])",
+          "legendFormat": "{{method}} {{endpoint}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "title": "Request Rate",
+      "tooltip": { "shared": true, "sort": 0, "value_type": "individual" },
+      "type": "graph",
+      "xaxis": { "buckets": null, "mode": "time", "name": null, "show": true, "values": [] },
+      "yaxes": [
+        { "format": "short", "label": "requests/sec", "logBase": 1, "max": null, "min": 0, "show": true },
+        { "format": "short", "label": null, "logBase": 1, "max": null, "min": null, "show": true }
+      ],
+      "yaxis": { "align": false, "alignLevel": null }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "fill": 1,
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 },
+      "id": 3,
+      "legend": { "avg": false, "current": true, "max": false, "min": false, "show": true, "total": false, "values": true },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": { "alertThreshold": true },
+      "percentage": false,
+      "pluginVersion": "9.5.3",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "product_inventory_value",
+          "legendFormat": "Total Inventory Value",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "title": "Inventory Value",
+      "tooltip": { "shared": true, "sort": 0, "value_type": "individual" },
+      "type": "graph",
+      "xaxis": { "buckets": null, "mode": "time", "name": null, "show": true, "values": [] },
+      "yaxes": [
+        { "format": "currencyUSD", "label": "Value ($)", "logBase": 1, "max": null, "min": 0, "show": true },
+        { "format": "short", "label": null, "logBase": 1, "max": null, "min": null, "show": true }
+      ],
+      "yaxis": { "align": false, "alignLevel": null }
+    },
+    {
+      "aliasColors": {},
+      "bars": true,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "fill": 1,
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 8 },
+      "id": 4,
+      "legend": { "avg": false, "current": true, "max": false, "min": false, "show": true, "total": false, "values": true },
+      "lines": false,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": { "alertThreshold": true },
+      "percentage": false,
+      "pluginVersion": "9.5.3",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "product_price_distribution_bucket",
+          "legendFormat": "Price <= {{le}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "title": "Price Distribution",
+      "tooltip": { "shared": true, "sort": 0, "value_type": "individual" },
+      "type": "graph",
+      "xaxis": { "buckets": null, "mode": "time", "name": null, "show": true, "values": [] },
+      "yaxes": [
+        { "format": "short", "label": "Count", "logBase": 1, "max": null, "min": 0, "show": true },
+        { "format": "short", "label": null, "logBase": 1, "max": null, "min": null, "show": true }
+      ],
+      "yaxis": { "align": false, "alignLevel": null }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "fill": 1,
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 16 },
+      "id": 5,
+      "legend": { "avg": false, "current": true, "max": false, "min": false, "show": true, "total": false, "values": true },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": { "alertThreshold": true },
+      "percentage": false,
+      "pluginVersion": "9.5.3",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "rate(product_errors_total[5m])",
+          "legendFormat": "{{method}} {{endpoint}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "title": "Error Rate",
+      "tooltip": { "shared": true, "sort": 0, "value_type": "individual" },
+      "type": "graph",
+      "xaxis": { "buckets": null, "mode": "time", "name": null, "show": true, "values": [] },
+      "yaxes": [
+        { "format": "short", "label": "errors/sec", "logBase": 1, "max": null, "min": 0, "show": true },
+        { "format": "short", "label": null, "logBase": 1, "max": null, "min": null, "show": true }
+      ],
+      "yaxis": { "align": false, "alignLevel": null }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "fill": 1,
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 16 },
+      "id": 6,
+      "legend": { "avg": false, "current": true, "max": false, "min": false, "show": true, "total": false, "values": true },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": { "alertThreshold": true },
+      "percentage": false,
+      "pluginVersion": "9.5.3",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, sum(rate(product_request_duration_seconds_bucket[5m])) by (le, method, endpoint))",
+          "legendFormat": "{{method}} {{endpoint}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "title": "Request Latency (95th Percentile)",
+      "tooltip": { "shared": true, "sort": 0, "value_type": "individual" },
+      "type": "graph",
+      "xaxis": { "buckets": null, "mode": "time", "name": null, "show": true, "values": [] },
+      "yaxes": [
+        { "format": "s", "label": "Seconds", "logBase": 1, "max": null, "min": 0, "show": true },
+        { "format": "short", "label": null, "logBase": 1, "max": null, "min": null, "show": true }
+      ],
+      "yaxis": { "align": false, "alignLevel": null }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "fill": 1,
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 24 },
+      "id": 7,
+      "legend": { "avg": false, "current": true, "max": false, "min": false, "show": true, "total": false, "values": true },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": { "alertThreshold": true },
+      "percentage": false,
+      "pluginVersion": "9.5.3",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "rate(product_creation_success_total[5m])",
+          "legendFormat": "Successful Creations",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "title": "Product Creation Rate",
+      "tooltip": { "shared": true, "sort": 0, "value_type": "individual" },
+      "type": "graph",
+      "xaxis": { "buckets": null, "mode": "time", "name": null, "show": true, "values": [] },
+      "yaxes": [
+        { "format": "short", "label": "creations/sec", "logBase": 1, "max": null, "min": 0, "show": true },
+        { "format": "short", "label": null, "logBase": 1, "max": null, "min": null, "show": true }
+      ],
+      "yaxis": { "align": false, "alignLevel": null }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "fill": 1,
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 24 },
+      "id": 8,
+      "legend": { "avg": false, "current": true, "max": false, "min": false, "show": true, "total": false, "values": true },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": { "alertThreshold": true },
+      "percentage": false,
+      "pluginVersion": "9.5.3",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "ALERTS{alertname=\"LowStockProducts\"}",
+          "legendFormat": "Low Stock Alert",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "title": "Low Stock Alert Status",
+      "tooltip": { "shared": true, "sort": 0, "value_type": "individual" },
+      "type": "graph",
+      "xaxis": { "buckets": null, "mode": "time", "name": null, "show": true, "values": [] },
+      "yaxes": [
+        { "format": "short", "label": "Alert State (1=Active)", "logBase": 1, "max": 1, "min": 0, "show": true },
+        { "format": "short", "label": null, "logBase": 1, "max": null, "min": null, "show": true }
+      ],
+      "yaxis": { "align": false, "alignLevel": null }
+    }
+  ],
+  "schemaVersion": 36,
+  "style": "dark",
+  "tags": [],
+  "templating": { "list": [] },
+  "time": { "from": "now-6h", "to": "now" },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Inventory Service Dashboard",
+  "uid": "inventory-service",
+  "version": 3
+}
