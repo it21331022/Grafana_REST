@@ -31,16 +31,8 @@
       "stack": false,
       "steppedLine": false,
       "targets": [
-        {
-          "expr": "product_count",
-          "legendFormat": "Total Products",
-          "refId": "A"
-        },
-        {
-          "expr": "product_low_stock",
-          "legendFormat": "Low Stock Products",
-          "refId": "B"
-        }
+        { "expr": "product_count", "legendFormat": "Total Products", "refId": "A" },
+        { "expr": "product_low_stock", "legendFormat": "Low Stock Products", "refId": "B" }
       ],
       "thresholds": [],
       "timeFrom": null,
@@ -48,10 +40,10 @@
       "title": "Inventory Status",
       "tooltip": { "shared": true, "sort": 0, "value_type": "individual" },
       "type": "graph",
-      "xaxis": { "buckets": null, "mode": "time", "name": null, "show": true, "values": [] },
+      "xaxis": { "buckets": null, "mode": "time", "show": true, "values": [] },
       "yaxes": [
-        { "format": "short", "label": "Count", "logBase": 1, "max": null, "min": 0, "show": true },
-        { "format": "short", "label": null, "logBase": 1, "max": null, "min": null, "show": true }
+        { "format": "short", "label": "Count", "logBase": 1, "min": 0, "show": true },
+        { "format": "short", "label": null, "logBase": 1, "show": true }
       ],
       "yaxis": { "align": false, "alignLevel": null }
     },
@@ -79,11 +71,7 @@
       "stack": false,
       "steppedLine": false,
       "targets": [
-        {
-          "expr": "rate(product_requests_total[5m])",
-          "legendFormat": "{{method}} {{endpoint}}",
-          "refId": "A"
-        }
+        { "expr": "rate(product_requests_total[5m])", "legendFormat": "{{method}} {{endpoint}}", "refId": "A" }
       ],
       "thresholds": [],
       "timeFrom": null,
@@ -91,10 +79,10 @@
       "title": "Request Rate",
       "tooltip": { "shared": true, "sort": 0, "value_type": "individual" },
       "type": "graph",
-      "xaxis": { "buckets": null, "mode": "time", "name": null, "show": true, "values": [] },
+      "xaxis": { "buckets": null, "mode": "time", "show": true, "values": [] },
       "yaxes": [
-        { "format": "short", "label": "requests/sec", "logBase": 1, "max": null, "min": 0, "show": true },
-        { "format": "short", "label": null, "logBase": 1, "max": null, "min": null, "show": true }
+        { "format": "short", "label": "requests/sec", "logBase": 1, "min": 0, "show": true },
+        { "format": "short", "label": null, "logBase": 1, "show": true }
       ],
       "yaxis": { "align": false, "alignLevel": null }
     },
@@ -122,11 +110,7 @@
       "stack": false,
       "steppedLine": false,
       "targets": [
-        {
-          "expr": "product_inventory_value",
-          "legendFormat": "Total Inventory Value",
-          "refId": "A"
-        }
+        { "expr": "product_inventory_value", "legendFormat": "Total Inventory Value", "refId": "A" }
       ],
       "thresholds": [],
       "timeFrom": null,
@@ -134,10 +118,10 @@
       "title": "Inventory Value",
       "tooltip": { "shared": true, "sort": 0, "value_type": "individual" },
       "type": "graph",
-      "xaxis": { "buckets": null, "mode": "time", "name": null, "show": true, "values": [] },
+      "xaxis": { "buckets": null, "mode": "time", "show": true, "values": [] },
       "yaxes": [
-        { "format": "currencyUSD", "label": "Value ($)", "logBase": 1, "max": null, "min": 0, "show": true },
-        { "format": "short", "label": null, "logBase": 1, "max": null, "min": null, "show": true }
+        { "format": "currencyUSD", "label": "Value ($)", "logBase": 1, "min": 0, "show": true },
+        { "format": "short", "label": null, "logBase": 1, "show": true }
       ],
       "yaxis": { "align": false, "alignLevel": null }
     },
@@ -165,11 +149,7 @@
       "stack": false,
       "steppedLine": false,
       "targets": [
-        {
-          "expr": "product_price_distribution_bucket",
-          "legendFormat": "Price <= {{le}}",
-          "refId": "A"
-        }
+        { "expr": "product_price_distribution_bucket", "legendFormat": "Price <= {{le}}", "refId": "A" }
       ],
       "thresholds": [],
       "timeFrom": null,
@@ -177,10 +157,10 @@
       "title": "Price Distribution",
       "tooltip": { "shared": true, "sort": 0, "value_type": "individual" },
       "type": "graph",
-      "xaxis": { "buckets": null, "mode": "time", "name": null, "show": true, "values": [] },
+      "xaxis": { "buckets": null, "mode": "time", "show": true, "values": [] },
       "yaxes": [
-        { "format": "short", "label": "Count", "logBase": 1, "max": null, "min": 0, "show": true },
-        { "format": "short", "label": null, "logBase": 1, "max": null, "min": null, "show": true }
+        { "format": "short", "label": "Count", "logBase": 1, "min": 0, "show": true },
+        { "format": "short", "label": null, "logBase": 1, "show": true }
       ],
       "yaxis": { "align": false, "alignLevel": null }
     },
@@ -208,11 +188,7 @@
       "stack": false,
       "steppedLine": false,
       "targets": [
-        {
-          "expr": "rate(product_errors_total[5m])",
-          "legendFormat": "{{method}} {{endpoint}}",
-          "refId": "A"
-        }
+        { "expr": "rate(product_errors_total[5m])", "legendFormat": "{{method}} {{endpoint}}", "refId": "A" }
       ],
       "thresholds": [],
       "timeFrom": null,
@@ -220,10 +196,10 @@
       "title": "Error Rate",
       "tooltip": { "shared": true, "sort": 0, "value_type": "individual" },
       "type": "graph",
-      "xaxis": { "buckets": null, "mode": "time", "name": null, "show": true, "values": [] },
+      "xaxis": { "buckets": null, "mode": "time", "show": true, "values": [] },
       "yaxes": [
-        { "format": "short", "label": "errors/sec", "logBase": 1, "max": null, "min": 0, "show": true },
-        { "format": "short", "label": null, "logBase": 1, "max": null, "min": null, "show": true }
+        { "format": "short", "label": "errors/sec", "logBase": 1, "min": 0, "show": true },
+        { "format": "short", "label": null, "logBase": 1, "show": true }
       ],
       "yaxis": { "align": false, "alignLevel": null }
     },
@@ -263,10 +239,10 @@
       "title": "Request Latency (95th Percentile)",
       "tooltip": { "shared": true, "sort": 0, "value_type": "individual" },
       "type": "graph",
-      "xaxis": { "buckets": null, "mode": "time", "name": null, "show": true, "values": [] },
+      "xaxis": { "buckets": null, "mode": "time", "show": true, "values": [] },
       "yaxes": [
-        { "format": "s", "label": "Seconds", "logBase": 1, "max": null, "min": 0, "show": true },
-        { "format": "short", "label": null, "logBase": 1, "max": null, "min": null, "show": true }
+        { "format": "s", "label": "Seconds", "logBase": 1, "min": 0, "show": true },
+        { "format": "short", "label": null, "logBase": 1, "show": true }
       ],
       "yaxis": { "align": false, "alignLevel": null }
     },
@@ -294,11 +270,7 @@
       "stack": false,
       "steppedLine": false,
       "targets": [
-        {
-          "expr": "rate(product_creation_success_total[5m])",
-          "legendFormat": "Successful Creations",
-          "refId": "A"
-        }
+        { "expr": "rate(product_creation_success_total[5m])", "legendFormat": "Successful Creations", "refId": "A" }
       ],
       "thresholds": [],
       "timeFrom": null,
@@ -306,10 +278,10 @@
       "title": "Product Creation Rate",
       "tooltip": { "shared": true, "sort": 0, "value_type": "individual" },
       "type": "graph",
-      "xaxis": { "buckets": null, "mode": "time", "name": null, "show": true, "values": [] },
+      "xaxis": { "buckets": null, "mode": "time", "show": true, "values": [] },
       "yaxes": [
-        { "format": "short", "label": "creations/sec", "logBase": 1, "max": null, "min": 0, "show": true },
-        { "format": "short", "label": null, "logBase": 1, "max": null, "min": null, "show": true }
+        { "format": "short", "label": "creations/sec", "logBase": 1, "min": 0, "show": true },
+        { "format": "short", "label": null, "logBase": 1, "show": true }
       ],
       "yaxis": { "align": false, "alignLevel": null }
     },
@@ -337,11 +309,7 @@
       "stack": false,
       "steppedLine": false,
       "targets": [
-        {
-          "expr": "ALERTS{alertname=\"LowStockProducts\"}",
-          "legendFormat": "Low Stock Alert",
-          "refId": "A"
-        }
+        { "expr": "ALERTS{alertname=\"LowStockProducts\"}", "legendFormat": "Low Stock Alert", "refId": "A" }
       ],
       "thresholds": [],
       "timeFrom": null,
@@ -349,12 +317,201 @@
       "title": "Low Stock Alert Status",
       "tooltip": { "shared": true, "sort": 0, "value_type": "individual" },
       "type": "graph",
-      "xaxis": { "buckets": null, "mode": "time", "name": null, "show": true, "values": [] },
+      "xaxis": { "buckets": null, "mode": "time", "show": true, "values": [] },
       "yaxes": [
         { "format": "short", "label": "Alert State (1=Active)", "logBase": 1, "max": 1, "min": 0, "show": true },
-        { "format": "short", "label": null, "logBase": 1, "max": null, "min": null, "show": true }
+        { "format": "short", "label": null, "logBase": 1, "show": true }
       ],
       "yaxis": { "align": false, "alignLevel": null }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "Percentage of errors compared to total requests",
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "thresholds" },
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "yellow", "value": 1 },
+              { "color": "orange", "value": 5 },
+              { "color": "red", "value": 10 }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 8, "x": 0, "y": 32 },
+      "id": 9,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "9.5.3",
+      "targets": [
+        {
+          "expr": "(sum(rate(product_errors_total[5m])) / sum(rate(product_requests_total[5m]))) * 100",
+          "legendFormat": "Error Rate",
+          "refId": "A"
+        }
+      ],
+      "title": "Error Percentage",
+      "type": "gauge"
+    },
+    {
+      "cards": { "cardPadding": null, "cardRound": null },
+      "color": { "cardColor": "#b4ff00", "colorScale": "sqrt", "colorScheme": "interpolateOranges", "exponent": 0.5, "mode": "spectrum" },
+      "dataFormat": "tsbuckets",
+      "datasource": "Prometheus",
+      "description": "Distribution of request durations over time",
+      "gridPos": { "h": 8, "w": 8, "x": 8, "y": 32 },
+      "id": 10,
+      "heatmap": {},
+      "hideZeroBuckets": false,
+      "highlightCards": true,
+      "legend": { "show": true },
+      "reverseYBuckets": false,
+      "targets": [
+        {
+          "expr": "sum(increase(product_request_duration_seconds_bucket[1m])) by (le)",
+          "format": "heatmap",
+          "legendFormat": "{{le}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Request Duration Heatmap",
+      "tooltip": { "show": true, "showHistogram": false },
+      "type": "heatmap",
+      "xAxis": { "show": true },
+      "yAxis": { "format": "s", "logBase": 1, "show": true },
+      "yBucketBound": "auto"
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "Percentage of low stock products compared to total inventory",
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "thresholds" },
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "yellow", "value": 10 },
+              { "color": "orange", "value": 20 },
+              { "color": "red", "value": 30 }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 8, "x": 16, "y": 32 },
+      "id": 11,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "9.5.3",
+      "targets": [
+        {
+          "expr": "(product_low_stock / product_count) * 100",
+          "legendFormat": "Low Stock %",
+          "refId": "A"
+        }
+      ],
+      "title": "Low Stock Percentage",
+      "type": "gauge"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "description": "Comparison of request success vs. error rates over time",
+      "fill": 1,
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 40 },
+      "id": 12,
+      "legend": { "avg": false, "current": true, "max": false, "min": false, "show": true, "total": false, "values": true },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        { "alias": "Error Rate", "color": "#E02F44" },
+        { "alias": "Success Rate", "color": "#73BF69" }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "sum(rate(product_requests_total[5m])) - sum(rate(product_errors_total[5m]))",
+          "legendFormat": "Success Rate",
+          "refId": "A"
+        },
+        {
+          "expr": "sum(rate(product_errors_total[5m]))",
+          "legendFormat": "Error Rate",
+          "refId": "B"
+        }
+      ],
+      "title": "Success vs. Error Rate",
+      "tooltip": { "shared": true, "sort": 0, "value_type": "individual" },
+      "type": "graph",
+      "xaxis": { "buckets": null, "mode": "time", "show": true, "values": [] },
+      "yaxes": [
+        { "format": "short", "label": "requests/sec", "logBase": 1, "min": 0, "show": true },
+        { "format": "short", "label": null, "logBase": 1, "show": true }
+      ],
+      "yaxis": { "align": false, "alignLevel": null }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "Multiple latency percentiles for comparison",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 40 },
+      "id": 13,
+      "options": {
+        "legend": { "calcs": [], "displayMode": "list", "placement": "bottom" },
+        "tooltip": { "mode": "single" }
+      },
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.50, sum(rate(product_request_duration_seconds_bucket[5m])) by (le, method))",
+          "legendFormat": "P50 - {{method}}",
+          "refId": "A"
+        },
+        {
+          "expr": "histogram_quantile(0.90, sum(rate(product_request_duration_seconds_bucket[5m])) by (le, method))",
+          "legendFormat": "P90 - {{method}}",
+          "refId": "B"
+        },
+        {
+          "expr": "histogram_quantile(0.95, sum(rate(product_request_duration_seconds_bucket[5m])) by (le, method))",
+          "legendFormat": "P95 - {{method}}",
+          "refId": "C"
+        },
+        {
+          "expr": "histogram_quantile(0.99, sum(rate(product_request_duration_seconds_bucket[5m])) by (le, method))",
+          "legendFormat": "P99 - {{method}}",
+          "refId": "D"
+        }
+      ],
+      "title": "Request Latency Percentiles",
+      "type": "timeseries"
     }
   ],
   "schemaVersion": 36,
@@ -366,5 +523,5 @@
   "timezone": "",
   "title": "Inventory Service Dashboard",
   "uid": "inventory-service",
-  "version": 3
+  "version": 5
 }
